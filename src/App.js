@@ -1,5 +1,5 @@
 import Typography from "@material-ui/core/Typography";
-import ButtonGrp from './componets/ButtonBar/butonBarCom'
+import ButtonBarComp from './componets/ButtonBar/butonBarCom'
 
 function App() {
 
@@ -8,7 +8,7 @@ function App() {
       <Typography variant="h6">
         Home
       </Typography>
-      <ButtonGrp/>
+      <ButtonBarComp/>
     </div>
   );
 }
