@@ -9,7 +9,7 @@ const AddItem = () =>{
         const classes = useStyles();
 
         return(
-            <div>
+            <div><p>Add Item</p>
             </div>);
 };
 

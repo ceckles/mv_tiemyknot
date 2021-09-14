@@ -9,7 +9,7 @@ const CreateRegistry = () =>{
         const classes = useStyles();
 
         return(
-            <div>
+            <div><p>Creat Registry</p>
             </div>);
 };
 

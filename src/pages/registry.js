@@ -9,7 +9,7 @@ const Registry = () =>{
         const classes = useStyles();
 
         return(
-            <div>
+            <div><p>Registry</p>
             </div>);
 };
 
