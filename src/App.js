@@ -3,8 +3,9 @@ import ButtonBarComp from "./components/ButtonBar/buttonBarCom";
 import { makeStyles } from "@material-ui/core/styles";
 import AddItem from "./pages/addItem";
 import Registry from "./pages/registry";
-import CreateRigistry from "./pages/createRegistry";
+import CreateRegistry from "./pages/createRegistry";
 import Landing from "./pages/landing";
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 
 //Styles
 const useStyles = makeStyles((theme) => ({
@@ -25,13 +26,20 @@ function App() {
   const classes = useStyles();
   
   return (
-    //Comment out all but your page
+    <Router>
     <div className="App">
-    <Landing />
-    <AddItem />
-    <Registry />
-    <CreateRigistry />
+    <Switch>
+    <Route exact path='/' component={Landing} />
+    <Route exact path='/addItem' component={AddItem} />
+    <Route exact path='/registry' component={Registry} />
+    <Route exact path='/createRegistry' component={CreateRegistry} />
+    </Switch>
+    <a href="/">Landing </a>
+    <a href="/registry">Registry </a>
+    <a href="/createRegistry">Create Registry </a>
+    <a href="/addItem">Add Item</a>
     </div>
+    </Router>
   );
 }
 
