@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../button/buttonComp';
+import Button from '../Button/buttonComp';
 
 const ButtonBarComp = () =>{
     return(
