@@ -1,32 +1,32 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Typography from '@material-ui/core/Typography';
-import ButtonBarComp from '../components/ButtonBar/buttonBarCom';
-//Styles
+import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
+import Grid from "@material-ui/core/Grid";
+import Box from "@material-ui/core/Box";
+
 //Styles
 const useStyles = makeStyles((theme) => ({
-    root: {
-      flexGrow: 1,
-    },
-    menuButton: {
-      marginRight: theme.spacing(2),
-    },
-    title: {
-      flexGrow: 1,
-      textTransform: "uppercase",
-    },
-  }));
+  root: {
+    background: 'linear-gradient(45deg, #9013FE 15%, #50E3C2 90%)',
+    minWidth: '100%',
+    minHeight: '100vh',
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+  },
+}));
 
 const Landing = () => {
   //use styles
   const classes = useStyles();
-
   return (
-    <div><p>Landing</p>
-      <Typography variant="h6" className={classes.title}>
-        Tie The Knot
-      </Typography>
-      <ButtonBarComp />
+    <div className={classes.root}>
+    <Grid container direction="column" justifyContent="center" alignItems="center">
+    <Grid item ><Box m={2}><Typography variant="h1" color='primary'>Tie My Knot</Typography></Box></Grid>
+    <Grid item><Box m={2}><Button variant="contained" color="primary" >View A Registry</Button></Box></Grid>
+    <Grid item ><Box m={2}><Button variant="contained" color="primary" >Create A Registry</Button></Box></Grid>
+  </Grid>
     </div>
   );
 };
