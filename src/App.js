@@ -1,5 +1,3 @@
-import Typography from "@material-ui/core/Typography";
-import ButtonBarComp from "./components/ButtonBar/buttonBarCom";
 import { makeStyles } from "@material-ui/core/styles";
 import AddItem from "./pages/addItem";
 import Registry from "./pages/registry";
@@ -17,7 +15,20 @@ function App() {
   const classes = useStyles();
   
   return (
-    <Landing />
+    <Router>
+    <div className="App">
+    <Switch>
+    <Route exact path='/addItem' component={AddItem} />
+    <Route exact path='/registry' component={Registry} />
+    <Route exact path='/createRegistry' component={CreateRegistry} />
+    <Route exact path='/index' component={Landing} />
+    </Switch>
+    <a href="/registry">Registry </a>
+    <a href="/createRegistry">Create Registry </a>
+    <a href="/addItem">Add Item</a>
+    <a href="/index">Landing</a>
+    </div>
+    </Router>
   );
 }
 
