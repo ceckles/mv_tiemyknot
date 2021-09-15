@@ -23,7 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 
 #remove db from tracking
-.sqlite*
+*.sqlite
 package-lock.json
 /dist
 /.cache
