@@ -31,4 +31,5 @@ const Landing = () => {
   );
 };
 
+//export
 export default Landing;
