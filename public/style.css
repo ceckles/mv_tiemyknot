@@ -1,0 +1,22 @@
+.item-img {
+  width: 225px;
+  padding: 0 10px;
+  float: left;
+  height: 225px;
+  background-repeat: no-repeat;
+  background-size: 225px;
+}
+
+
+h1 {
+  color:  steelblue;
+  font-size:  32px;
+  font-family:  fantasy, sans-serif;
+  text-shadow: 2px 2px fuchsia;
+}
+
+
+
+* {
+  background-color:  papayawhip;
+}
