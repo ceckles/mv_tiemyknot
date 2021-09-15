@@ -22,6 +22,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+<<<<<<< HEAD
 #remove from tracking
 db.sqlite
 
@@ -29,3 +30,10 @@ db.sqlite
 /.cache
 /dist
 package-lock.json
+=======
+#remove db from tracking
+.sqlite
+package-lock.json
+/dist
+/.cache
+>>>>>>> 14d7567ddeadd3eb152b44d83c7353d9d2ceb70e
