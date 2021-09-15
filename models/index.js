@@ -12,4 +12,4 @@ Sauce.init({
     timestamps: false,
 });
 
-module.exports = {Sauce};
+module.exports = Sauce;
