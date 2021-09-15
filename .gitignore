@@ -22,5 +22,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-#remove db from tracking
-.sqlite
+#remove from tracking
+db.sqlite
+
+# cache
+/.cache
+/dist
+package-lock.json
