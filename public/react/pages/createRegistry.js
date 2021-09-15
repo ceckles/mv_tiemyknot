@@ -1,93 +1,134 @@
-import React from 'react';
+iimport React from 'react';
 import { makeStyles } from "@material-ui/core/styles";
-
+import FormControl from '@material-ui/core/FormControl';
+import { InputLabel, Input } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
-import TextareaAutosize from '@material-ui/core/TextareaAutosize';
+import SaveIcon from '@material-ui/icons/Save';
+import TextField from '@material-ui/core/TextField';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
+import ListItemText from '@material-ui/core/ListItemText';
+import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
-import PhotoCamera from '@material-ui/icons/PhotoCamera';
-
-
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import FolderIcon from '@material-ui/icons/Folder';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 
 //Styles
 const useStyles = makeStyles((theme) => ({ 
 
-
-    root: {
-        '& > *': {
-          margin: theme.spacing(1),
-        },
-      },
-      input: {
-        display: 'none',
-      },
-
-
+  
 
  }));
 
+
+ function generate(element) {
+  return [0, 1, 2].map((value) =>
+    React.cloneElement(element, {
+      key: value,
+    }),
+  );
+}
+
+
 const CreateRegistry = () =>{
         //use styles
-      
         const classes = useStyles();
+        const [dense, setDense] = React.useState(false);
+  const [secondary, setSecondary] = React.useState(false);
 
-        return(
-            <div><p>Create Registry</p>
-
-
-                <p>Groom</p>
-                <p>Bride</p>
+        return (
+          <div><p>Create Registry </p>  
                 
-      
-            <div>
-                    <br></br>
-            </div>
-      <TextareaAutosize
-      maxRows={4}
-      aria-label="maximum height"
-      placeholder="Enter Item here"
-      defaultValue="Please enter the item list here"
-    />
-
-    
-    
-
-               <div></div>
-               <Button variant="contained">Add Item</Button> <div>
-                 
-               </div>
-
-                <input
-        accept="image/*"
-        className={classes.input}
-        id="contained-button-file"
-        multiple
-        type="file"
-      />
-      <label htmlFor="contained-button-file">
-        <Button variant="contained" color="primary" component="span">
-          Upload
-        </Button>
-      </label>
-      <input accept="image/*" className={classes.input} id="icon-button-file" type="file" />
-      <label htmlFor="icon-button-file">
-        <IconButton color="primary" aria-label="upload picture" component="span">
-          <PhotoCamera />
-        </IconButton>
-      </label>
-
-           
+                <FormControl className={classes.root} noValidate autoComplete="off">                   
+                    <TextField className={classes.textbox} required id="outlined-required" label="Enter Groom Name" variant="outlined" /><br/>
+                    <TextField className={classes.textbox} required id="outlined-required"label="Enter Bride name" variant="outlined" /><br/>
+                
+                 <div></div>
 
 
 
-                <Button variant="contained">Submit</Button>
+              
+         
 
-            </div>
-        
-       
-        
+
+                </FormControl><br/>
+
+
+                <Button variant="contained" color="primary" size="large" className={classes.button}
+        > Add item</Button>
+
+
+
+
+      <Grid container spacing={2}>
+        <Grid item xs={12} md={6}>
+          
+          <div className={classes.demo}>
             
-            );
-};
+                
+           
+          </div>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          
+        </Grid>
+      </Grid>
+      <Grid container spacing={2}>
+        <Grid item xs={12} md={6}>
+         
+          
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Typography variant="h6" className={classes.title}>
+            Item List
+          </Typography>
+          <div className={classes.demo}>
+            <List dense={dense}>
+              {generate(
+                <ListItem>
+                  <ListItemAvatar>
+                    <Avatar>
+                      <FolderIcon />
+                    </Avatar>
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary="Item"
+                    secondary={secondary ? 'Secondary text' : null}
+                  />
+                  <ListItemSecondaryAction>
+                    <IconButton edge="end" aria-label="delete">
+                      <DeleteIcon />
+                    </IconButton>
+                  </ListItemSecondaryAction>
+                </ListItem>,
+              )}
+            </List>
+          </div>
+        </Grid>
+      </Grid>
+
+
+
+
+
+
+      <Button variant="contained" color="primary" size="large" className={classes.button}
+        > Submit </Button>
+
+
+            </div>
+
+            
+        );
+      };
 
 export default CreateRegistry;
