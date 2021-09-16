@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react';
+import { makeStyles } from "@material-ui/core/styles";
+import AddItem from "../pages/addItem";
+import Registry from "../pages/registry";
+import CreateRegistry from "../pages/createRegistry";
+import Landing from "../pages/landing";
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 
-import { ItemContainer} from './ItemContainer'
+//Styles
+const useStyles = makeStyles((theme) => ({
+}));
 
 export const App = () => {
-	/*
-	1st arg = what is the state element called?
-	2nd arg = what function will update the state?
-
-	*/
-	const [sauces, setSauces]  = useState([]) //what do we want our default state to be?
+	const classes = useStyles();
 
 	async function fetchSauces() {
   		try {
@@ -31,8 +34,20 @@ export const App = () => {
 	//return everything in nested pair of tags
 	return(
 		<div>
-			<h2>My super react site!</h2>
-			<ItemContainer items={sauces} />
+		<Router>
+		<div className="App">
+		<Switch>
+		<Route exact path='/addItem' component={AddItem} />
+		<Route exact path='/registry' component={Registry} />
+		<Route exact path='/createRegistry' component={CreateRegistry} />
+		<Route exact path='/index' component={Landing} />
+		</Switch>
+		<a href="/registry">Registry </a>
+		<a href="/createRegistry">Create Registry </a>
+		<a href="/addItem">Add Item</a>
+		<a href="/index">Landing</a>
 		</div>
-	)
+		</Router>
+		</div>
+	);
 }
