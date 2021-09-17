@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
  
  }));
 
-const CreateReg = () =>{
+const CreateRegistry = () =>{
         //use styles
         const classes = useStyles();
         
@@ -55,7 +55,7 @@ const CreateReg = () =>{
                                <ListItemText primary="Item 2" secondary="Candles" />
                             </ListItem>    
                         </List>
-                        <Button variant="contained" color="primary" size="medium" className={classes.button}
+                        <Button  variant="contained" color="primary" size="medium" className={classes.button}
                              > +    </Button>
                         
 
@@ -74,4 +74,4 @@ const CreateReg = () =>{
             </div>);
 };
 
-export default CreateReg;
+export default CreateRegistry;

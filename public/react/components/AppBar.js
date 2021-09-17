@@ -15,6 +15,7 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import { orange } from "@mui/material/colors";
+import { Button } from "@material-ui/core";
 
 
 
@@ -108,7 +109,7 @@ export default function PersistentDrawerLeft() {
         </DrawerHeader>
         <Divider />
         <List >
-          {["Registry ", "Create Registry", "Add item", "Home"].map(
+          {["Registry ", "Create Registry", "Add item", "Menu"].map(
             (text, index) => (
               <ListItem button key={text}>
                 <ListItemText primary={text} key={index}/>
@@ -116,6 +117,7 @@ export default function PersistentDrawerLeft() {
             )
           )}
         </List>
+        
       </Drawer>
     </Box>
   );

@@ -52,6 +52,8 @@ export const App = () => {
   			console.log("OH NO AN ERROR! ", err)
   		}
   	} 
+
+		
   
 	//takes a callback function, where we put our fetch!
   	useEffect(() => {
