@@ -4,7 +4,8 @@ import AddItem from "../pages/addItem";
 import Registry from "../pages/registry";
 import CreateRegistry from "../pages/createRegistry";
 import Landing from "../pages/landing";
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import PersistentDrawerLeft from './AppBar';
 
 //Styles
 const useStyles = makeStyles((theme) => ({
@@ -34,6 +35,7 @@ export const App = () => {
 	//return everything in nested pair of tags
 	return(
 		<div>
+		<PersistentDrawerLeft />	
 		<Router>
 		<div className="App">
 		<Switch>
