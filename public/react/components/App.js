@@ -70,10 +70,6 @@ export const App = () => {
 		<Route exact path='/createRegistry' component={CreateRegistry} />
 		<Route exact path='/index' component={Landing} />
 		</Switch>
-		<a href="/registry">Registry </a>
-		<a href="/createRegistry">Create Registry </a>
-		<a href="/addItem">Add Item</a>
-		<a href="/">Landing</a>
 		</div>
 		</Router>
 		{showReg
