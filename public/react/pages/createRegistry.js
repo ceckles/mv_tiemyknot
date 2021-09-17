@@ -1,121 +1,79 @@
-import React from "react";
+import React from 'react';
 import { makeStyles } from "@material-ui/core/styles";
-import FormControl from "@material-ui/core/FormControl";
-import Button from "@material-ui/core/Button";
-import TextField from "@material-ui/core/TextField";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemAvatar from "@material-ui/core/ListItemAvatar";
-import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
-import ListItemText from "@material-ui/core/ListItemText";
-import Avatar from "@material-ui/core/Avatar";
-import IconButton from "@material-ui/core/IconButton";
-import Grid from "@material-ui/core/Grid";
-import Typography from "@material-ui/core/Typography";
-import FolderIcon from "@material-ui/icons/Folder";
-import DeleteIcon from "@material-ui/icons/Delete";
+import FormControl from '@material-ui/core/FormControl';
+
+import TextField from '@material-ui/core/TextField';
+
+import Button from '@material-ui/core/Button';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+
 
 //Styles
-const useStyles = makeStyles((theme) => ({}));
+const useStyles = makeStyles((theme) => ({ 
+    root: {
+        background: 'linear-gradient(45deg, #9013FE 15%, #50E3C2 90%)',
+        width: '100vw',
+        minHeight: '100vh',
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: 'center'
+        
+      },
+    textbox:{
+        minHeight: "10vh",
+        
+        
+        width: '20vw',
+    },
+    button: {
+      width: "max-content",
+      display: "flex",
+      flexDirection: "column",
+      
+      justifyContent: "center",
+  }
+ 
+ }));
 
-function generate(element) {
-  return [0, 1, 2].map((value) =>
-    React.cloneElement(element, {
-      key: value,
-    })
-  );
-}
+const CreateReg = () =>{
+        //use styles
+        const classes = useStyles();
+        
+        return(
+            <div><p>Create Registry</p>  
+                <FormControl className={classes.root} noValidate autoComplete="off">      
+                      <p>Create Registry</p>             
+                          <TextField className={classes.textbox} required id="outlined-required" label="Groom" variant="outlined" /><br/>
+                              <TextField className={classes.textbox} required id="outlined-required"label="Bride" variant="outlined" /><br/>
+                    <p>Item List</p>
+                        <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+                            <ListItem>
+        <                       ListItemText primary="Item 1" secondary="SilverWare" />
+                                  </ListItem>
+                             <ListItem>     
+                               <ListItemText primary="Item 2" secondary="Candles" />
+                            </ListItem>    
+                        </List>
+                        <Button variant="contained" color="primary" size="medium" className={classes.button}
+                             > +    </Button>
+                        
 
-const CreateRegistry = () => {
-  //use styles
-  const classes = useStyles();
-  const [dense, setDense] = React.useState(false);
-  const [secondary, setSecondary] = React.useState(false);
 
-  return (
-    <div>
-      <p>Create Registry </p>
+                      <br />
+                      <br />
+                      <br />
+                      <br />
+                      <br />
+                  
+                    <Button variant="contained" color="primary" size="large" className={classes.button}
+                             > Submit    </Button>
+               </FormControl>
 
-      <FormControl className={classes.root} noValidate autoComplete="off">
-        <TextField
-          className={classes.textbox}
-          required
-          id="outlined-required"
-          label="Enter Groom Name"
-          variant="outlined"
-        />
-        <br />
-        <TextField
-          className={classes.textbox}
-          required
-          id="outlined-required"
-          label="Enter Bride name"
-          variant="outlined"
-        />
-        <br />
 
-        <div></div>
-      </FormControl>
-      <br />
-
-      <Button
-        variant="contained"
-        color="primary"
-        size="large"
-        className={classes.button}
-      >
-        {" "}
-        Add item
-      </Button>
-
-      <Grid container spacing={2}>
-        <Grid item xs={12} md={6}>
-          <div className={classes.demo}></div>
-        </Grid>
-        <Grid item xs={12} md={6}></Grid>
-      </Grid>
-      <Grid container spacing={2}>
-        <Grid item xs={12} md={6}></Grid>
-        <Grid item xs={12} md={6}>
-          <Typography variant="h6" className={classes.title}>
-            Item List
-          </Typography>
-          <div className={classes.demo}>
-            <List dense={dense}>
-              {generate(
-                <ListItem>
-                  <ListItemAvatar>
-                    <Avatar>
-                      <FolderIcon />
-                    </Avatar>
-                  </ListItemAvatar>
-                  <ListItemText
-                    primary="Item"
-                    secondary={secondary ? "Secondary text" : null}
-                  />
-                  <ListItemSecondaryAction>
-                    <IconButton edge="end" aria-label="delete">
-                      <DeleteIcon />
-                    </IconButton>
-                  </ListItemSecondaryAction>
-                </ListItem>
-              )}
-            </List>
-          </div>
-        </Grid>
-      </Grid>
-
-      <Button
-        variant="contained"
-        color="primary"
-        size="large"
-        className={classes.button}
-      >
-        {" "}
-        Submit{" "}
-      </Button>
-    </div>
-  );
+            </div>);
 };
 
-export default CreateRegistry;
+export default CreateReg;
