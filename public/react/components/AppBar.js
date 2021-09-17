@@ -19,7 +19,7 @@ import { orange } from "@mui/material/colors";
 
 
 
-const drawerWidth = 240;
+const drawerWidth = 175;
 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: prop => prop !== "open"
@@ -97,18 +97,18 @@ export default function PersistentDrawerLeft() {
         open={open}
       >
         <DrawerHeader>
-          <IconButton onClick={handleDrawerClose}>
-            <p>Choose action</p>
+          <IconButton onClick={handleDrawerClose} style= {{color: 'purple'}}>
+            
             {theme.direction === "ltr" ? (
-              <ChevronLeftIcon />
+              <MenuIcon />
             ) : (
-              <ChevronRightIcon />
+              <MenuIcon />
             )}
           </IconButton>
         </DrawerHeader>
         <Divider />
         <List >
-          {["Registry ", "Create Registry", "Add item", "Home"].map(
+          {[<a href="/">Home</a>, <a href="/createRegistry">Create Registry </a>, <a href="/addItem">Add Item</a>, <a href="/registry">Registry </a>].map(
             (text, index) => (
               <ListItem button key={text}>
                 <ListItemText primary={text} key={index}/>
