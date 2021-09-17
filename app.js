@@ -1,13 +1,17 @@
 const express = require('express');
+const { check, validationResult } = require("express-validator");
 const {sequelize} = require('./db');
-//const {Sauce} = require('./models');
-const {Item} = require('./models/Item');
+
 const {Registry} = require('./models/Registry');
+const {Item} = require('./models/Item');
 
 const seed = require('./seed')
 
-const PORT = process.env.PORT || 3000;
+//Validators
+const idCheck = [check("id").isNumeric().withMessage("ID must be a number")];
 
+
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 
@@ -20,17 +24,21 @@ app.use((req, res, next) => {
   next();
 });
 
-
+//See DB
 seed();
 
-app.get('/sauces', async (req, res) => {
-    //const sauces= await Sauce.findAll()
-   // res.json({sauces})
+app.get('/registry', async (req, res) => {
+    const registry = await Registry.findAll()
+    res.json({registry})
 })
 
-app.get('/sauces/:id', async (req, res) => {
-    //const sauce = await Sauce.findByPk(req.params.id)
-    //res.json({sauce})
+app.get('/registry/:id',idCheck, async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() });
+    }
+    const registry = await Registry.findByPk(req.params.id)
+    res.json({registry})
 })
 
 app.listen(PORT, () => {
