@@ -9,6 +9,7 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
+import PersistentDrawerLeft from './AppBar';
 //Styles
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -60,6 +61,7 @@ export const App = () => {
 	//return everything in nested pair of tags
 	return(
 		<div>
+		<PersistentDrawerLeft />	
 		<Router>
 		<div className="App">
 		<Switch>
