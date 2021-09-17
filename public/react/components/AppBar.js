@@ -66,7 +66,7 @@ export default function PersistentDrawerLeft() {
       <CssBaseline />
       <AppBar position="fixed" open={open} >
         <Toolbar  >
-          <IconButton
+          <IconButton style= {{color: 'orange'}}
             color= 'inherit'
             aria-label="open drawer"
             onClick={handleDrawerOpen}
