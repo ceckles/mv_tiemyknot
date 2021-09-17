@@ -1,11 +1,11 @@
 const express = require('express');
 const { check, validationResult } = require("express-validator");
-const {sequelize} = require('./db');
+const {sequelize} = require('../db');
 
-const {Registry} = require('./models/Registry');
-const {Item} = require('./models/Item');
+const {Registry} = require('../models/Registry');
+const {Item} = require('../models/Item');
 
-const seed = require('./seed')
+const seed = require('../seed')
 
 //Validators
 const idCheck = [check("id").isNumeric().withMessage("ID must be a number")];

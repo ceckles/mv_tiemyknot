@@ -5,6 +5,9 @@ import { InputLabel, Input } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import SaveIcon from '@material-ui/icons/Save';
 import TextField from '@material-ui/core/TextField';
+import { orange } from '@material-ui/core/colors';
+import Typography from '@material-ui/core/Typography';
+import { withStyles} from '@material-ui/core/styles'
 
 //Styles
 const useStyles = makeStyles((theme) => ({ 
@@ -28,17 +31,27 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: "column",
         
         justifyContent: "center",
+    pageHeader:{
+        color :'orange'
+    }
     }
  }));
+
+ const PageHeader =withStyles({
+     root: {
+         color: orange[500],
+     }
+})(Typography);
 
 const AddItem = () =>{
         //use styles
         const classes = useStyles();
 
         return(
-            <div><p>Add Item</p>  
+            <div>
                 
                 <FormControl className={classes.root} noValidate autoComplete="off">                   
+                   <PageHeader variant="h3" >Add Item</PageHeader>
                     <TextField className={classes.textbox} required id="outlined-required" label="Item Name" variant="outlined" /><br/>
                     <TextField className={classes.textbox} required id="outlined-required"label="Item Link" variant="outlined" /><br/>
                 
