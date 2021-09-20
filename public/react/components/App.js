@@ -4,12 +4,12 @@ import AddItem from "../pages/addItem";
 import Registry from "../pages/registry";
 import CreateRegistry from "../pages/createRegistry";
 import Landing from "../pages/landing";
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import PersistentDrawerLeft from './AppBar';
+
 //Styles
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -28,7 +28,7 @@ export const App = () => {
 
 	//useState
 	const [registry, setRegistry] = useState([]);
-	const [showReg, setShowReg] = useState(false);
+	//
 
 	//useEffect
 	useEffect(() =>{
@@ -36,10 +36,6 @@ export const App = () => {
 	}, []);
 
 
-	function handleShowReg(){
-		//Switch the show of Registry
-		setShowReg(!showReg);
-	}
 	async function fetchRegList() {
   		try {
   			const response = await fetch('http://localhost:3000/registry');
@@ -62,28 +58,9 @@ export const App = () => {
 	return(
 		<div>
 		<PersistentDrawerLeft />	
-		<Router>
 		<div className="App">
-		<Switch>
-		<Route exact path='/addItem' component={AddItem} />
-		<Route exact path='/registry' component={Registry} />
-		<Route exact path='/createRegistry' component={CreateRegistry} />
-		<Route exact path='/index' component={Landing} />
-		</Switch>
+		<Landing />
 		</div>
-		</Router>
-		{showReg
-			? (<Registry />) 
-			: (
-				<div className={classes.root}>
-				<Grid container direction="column" justifyContent="center" alignItems="center">
-				<Grid item ><Box m={2}><Typography variant="h1" color='primary'>Tie My Knot</Typography></Box></Grid>
-				<Grid item><Box m={2}><Button variant="contained" color="primary" onClick={handleShowReg}>View A Registry</Button></Box></Grid>
-				<Grid item ><Box m={2}><Button variant="contained" color="primary" >Create A Registry</Button></Box></Grid>
-			  	</Grid>
-				</div>
-			)
-		}
 		</div>
 	);
 }
