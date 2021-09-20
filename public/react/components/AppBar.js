@@ -109,11 +109,7 @@ export default function PersistentDrawerLeft() {
         </DrawerHeader>
         <Divider />
         <List >
-<<<<<<< HEAD
-          {["Registry ", "Create Registry", "Add item", "Menu"].map(
-=======
           {[<a href="/">Home</a>, <a href="/createRegistry">Create Registry </a>, <a href="/addItem">Add Item</a>, <a href="/registry">Registry </a>].map(
->>>>>>> 4baf407cbdd703411d32017aad6c719b1fe5e688
             (text, index) => (
               <ListItem button key={text}>
                 <ListItemText primary={text} key={index}/>
