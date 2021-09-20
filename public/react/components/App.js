@@ -4,6 +4,7 @@ import AddItem from "../pages/addItem";
 import Registry from "../pages/registry";
 import CreateRegistry from "../pages/createRegistry";
 import Landing from "../pages/landing";
+import RegistryList from "../pages/registryList";
 import { Route } from 'react-router-dom'
 import PersistentDrawerLeft from './AppBar';
 
@@ -24,7 +25,7 @@ export const App = () => {
 	const classes = useStyles();
 
 	//useState
-	const [registry, setRegistry] = useState([]);
+	const [registryList, setRegistryList] = useState([]);
 	//
 
 	//useEffect
@@ -37,10 +38,8 @@ export const App = () => {
   		try {
   			const response = await fetch('http://localhost:3000/registry');
   			const responseJSON = await response.json()
-
   			console.log("WHAT IS OUR RES? ", responseJSON);	
-
-  			setRegistry(responseJSON.sauces)
+  			setRegistryList(responseJSON.registry)
   		} catch(err) {
   			console.log("OH NO AN ERROR! ", err)
   		}
@@ -53,7 +52,7 @@ export const App = () => {
 
 	//return everything in nested pair of tags
 	return(
-		<div>
+		<div className="App">
 		<PersistentDrawerLeft />
 		<Route path="/index">
               <Landing />
@@ -65,7 +64,7 @@ export const App = () => {
               <AddItem />
         </Route>
         <Route path="/registry">
-              <Registry />
+              <RegistryList  RegistryList={registryList}/>
         </Route>
 		</div>
 	);
