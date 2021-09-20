@@ -61,9 +61,7 @@ export const App = () => {
 	return(
 		<div className="App">
 		<PersistentDrawerLeft />
-		<Route path="/index">
-              <Landing />
-        </Route>
+
         <Route path="/createRegistry">
           <CreateRegistry />
         </Route>
@@ -73,6 +71,9 @@ export const App = () => {
         <Route path="/registry">
               <RegistryList  RegistryList={registryList}/>
         </Route>
+		<Route exact path="/">
+		<Landing />
+  		</Route>
 		</div>
 	);
 }
