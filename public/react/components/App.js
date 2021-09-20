@@ -4,16 +4,13 @@ import AddItem from "../pages/addItem";
 import Registry from "../pages/registry";
 import CreateRegistry from "../pages/createRegistry";
 import Landing from "../pages/landing";
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
-import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
-import Grid from "@material-ui/core/Grid";
-import Box from "@material-ui/core/Box";
+import { Route } from 'react-router-dom'
 import PersistentDrawerLeft from './AppBar';
+
 //Styles
 const useStyles = makeStyles((theme) => ({
 	root: {
-		background: 'linear-gradient(45deg, #9013FE 15%, #50E3C2 90%)',
+		bgcolor: 'linear-gradient(45deg, #9013FE 15%, #50E3C2 90%)',
 		minWidth: '100%',
 		minHeight: '100vh',
 		display: "flex",
@@ -28,7 +25,7 @@ export const App = () => {
 
 	//useState
 	const [registry, setRegistry] = useState([]);
-	const [showReg, setShowReg] = useState(false);
+	//
 
 	//useEffect
 	useEffect(() =>{
@@ -36,10 +33,6 @@ export const App = () => {
 	}, []);
 
 
-	function handleShowReg(){
-		//Switch the show of Registry
-		setShowReg(!showReg);
-	}
 	async function fetchRegList() {
   		try {
   			const response = await fetch('http://localhost:3000/registry');
@@ -63,29 +56,19 @@ export const App = () => {
 	//return everything in nested pair of tags
 	return(
 		<div>
-		<PersistentDrawerLeft />	
-		<Router>
-		<div className="App">
-		<Switch>
-		<Route exact path='/addItem' component={AddItem} />
-		<Route exact path='/registry' component={Registry} />
-		<Route exact path='/createRegistry' component={CreateRegistry} />
-		<Route exact path='/index' component={Landing} />
-		</Switch>
-		</div>
-		</Router>
-		{showReg
-			? (<Registry />) 
-			: (
-				<div className={classes.root}>
-				<Grid container direction="column" justifyContent="center" alignItems="center">
-				<Grid item ><Box m={2}><Typography variant="h1" color='primary'>Tie My Knot</Typography></Box></Grid>
-				<Grid item><Box m={2}><Button variant="contained" color="primary" onClick={handleShowReg}>View A Registry</Button></Box></Grid>
-				<Grid item ><Box m={2}><Button variant="contained" color="primary" >Create A Registry</Button></Box></Grid>
-			  	</Grid>
-				</div>
-			)
-		}
+		<PersistentDrawerLeft />
+		<Route path="/index">
+              <Landing />
+        </Route>
+        <Route path="/createRegistry">
+          <CreateRegistry />
+        </Route>
+        <Route path="/addItem">
+              <AddItem />
+        </Route>
+        <Route path="/registry">
+              <Registry />
+        </Route>
 		</div>
 	);
 }

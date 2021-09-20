@@ -29,7 +29,7 @@ const Registry = () =>{
 
         return(
             <div><Container maxWidth="sm">
-        <h1  style={{ backgroundColor: '#cfe8fc'}}>
+        <h1  style={{ bgcolor: '#cfe8fc'}}>
         <p>Registry</p>
         
          <List subheader={<ListSubheader>Items</ListSubheader>} className={classes.root}>
