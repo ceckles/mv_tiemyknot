@@ -75,7 +75,9 @@ export default function PersistentDrawerLeft() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div" color='orange' >
+          <Link to="/index">
             Tie My Knot
+            </Link>
           </Typography>
         </Toolbar>
       </AppBar>
