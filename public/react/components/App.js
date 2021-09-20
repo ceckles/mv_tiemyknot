@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import AddItem from "../pages/addItem";
 import Registry from "../pages/registry";
@@ -8,31 +8,38 @@ import RegistryList from "../pages/registryList";
 import { Route } from 'react-router-dom'
 import PersistentDrawerLeft from './AppBar';
 
+
 //Styles
-const useStyles = makeStyles((theme) => ({
-	root: {
-		bgcolor: 'linear-gradient(45deg, #9013FE 15%, #50E3C2 90%)',
-		minWidth: '100%',
-		minHeight: '100vh',
-		display: "flex",
-		flexDirection: "column",
-		justifyContent: "center",
-	  },
+const useStyles = makeStyles(theme => ({
+  root: {
+    bgcolor: "linear-gradient(45deg, #9013FE 15%, #50E3C2 90%)",
+    minWidth: "100%",
+    minHeight: "100vh",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center"
+  }
 }));
 
 export const App = () => {
-	//Theme
-	const classes = useStyles();
+  //Theme
+  const classes = useStyles();
+
 
 	//useState
 	const [registryList, setRegistryList] = useState([]);
-	//
 
-	//useEffect
-	useEffect(() =>{
-		fetchRegList();
-	}, []);
 
+
+  //useEffect
+  useEffect(() => {
+    fetchRegList();
+  }, []);
+
+  function handleShowReg() {
+    //Switch the show of Registry
+    setShowReg(!showReg);
+  }
 
 	async function fetchRegList() {
   		try {
