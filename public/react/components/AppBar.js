@@ -2,7 +2,7 @@ import * as React from "react";
 import { styled, useTheme} from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
-import CssBaseline from "@mui/material/CssBaseline";
+
 import MuiAppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
@@ -10,11 +10,10 @@ import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import { orange } from "@mui/material/colors";
+import {  Link} from 'react-router-dom';
 
 
 
@@ -27,7 +26,7 @@ const AppBar = styled(MuiAppBar, {
   transition: theme.transitions.create(["margin", "width"], {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
-    backgroundColor: orange
+    background: orange
   }),
   ...(open && {
     width: `calc(100% - ${drawerWidth}px)`,
@@ -63,7 +62,7 @@ export default function PersistentDrawerLeft() {
 
   return (
     <Box sx={{ display: "flex" }} >
-      <CssBaseline />
+      {/* <CssBaseline /> */}
       <AppBar position="fixed" open={open} >
         <Toolbar  >
           <IconButton style= {{color: 'orange'}}
@@ -108,7 +107,7 @@ export default function PersistentDrawerLeft() {
         </DrawerHeader>
         <Divider />
         <List >
-          {[<a href="/">Home</a>, <a href="/createRegistry">Create Registry </a>, <a href="/addItem">Add Item</a>, <a href="/registry">Registry </a>].map(
+          {[<Link to="/index">Home</Link>, <Link to="/createRegistry">Create Registry </Link>, <Link to="/addItem">Add Item</Link>, <Link to="/registry">Registry </Link>].map(
             (text, index) => (
               <ListItem button key={text}>
                 <ListItemText primary={text} key={index}/>
@@ -116,6 +115,7 @@ export default function PersistentDrawerLeft() {
             )
           )}
         </List>
+
       </Drawer>
     </Box>
   );
