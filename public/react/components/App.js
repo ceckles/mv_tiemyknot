@@ -4,16 +4,13 @@ import AddItem from "../pages/addItem";
 import Registry from "../pages/registry";
 import CreateRegistry from "../pages/createRegistry";
 import Landing from "../pages/landing";
-import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
-import Grid from "@material-ui/core/Grid";
-import Box from "@material-ui/core/Box";
+import { Route } from 'react-router-dom'
 import PersistentDrawerLeft from './AppBar';
 
 //Styles
 const useStyles = makeStyles((theme) => ({
 	root: {
-		background: 'linear-gradient(45deg, #9013FE 15%, #50E3C2 90%)',
+		bgcolor: 'linear-gradient(45deg, #9013FE 15%, #50E3C2 90%)',
 		minWidth: '100%',
 		minHeight: '100vh',
 		display: "flex",
@@ -57,10 +54,19 @@ export const App = () => {
 	//return everything in nested pair of tags
 	return(
 		<div>
-		<PersistentDrawerLeft />	
-		<div className="App">
-		<Landing />
-		</div>
+		<PersistentDrawerLeft />
+		<Route path="/index">
+              <Landing />
+        </Route>
+        <Route path="/createRegistry">
+          <CreateRegistry />
+        </Route>
+        <Route path="/addItem">
+              <AddItem />
+        </Route>
+        <Route path="/registry">
+              <Registry />
+        </Route>
 		</div>
 	);
 }
