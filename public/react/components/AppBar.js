@@ -69,18 +69,15 @@ export default function PersistentDrawerLeft() {
             sx={{ mr: 2, ...(open && { display: "none" }) }}
           >
             <MenuIcon />
-          </IconButton>
-          <Link to="/" style={{ textDecoration: "none"}}>
-            <Typography variant="h6" noWrap component="div"  color ="#f5ebe1 ">
+          </IconButton>          
+            <Typography variant="h6" noWrap component="div"  color ="#f5ebe1">
               Tie My Knot
-            </Typography>
-          </Link>
+            </Typography>        
         </Toolbar>
       </AppBar>
       <Drawer
         sx={{
           width: drawerWidth,
-
           flexShrink: 0,
           "& .MuiDrawer-paper": {
             width: drawerWidth,
