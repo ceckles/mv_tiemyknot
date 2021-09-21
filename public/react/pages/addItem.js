@@ -10,18 +10,21 @@ import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
 
 //Styles
-const useStyles = makeStyles((theme) => ({
-  root: {
-    background: "linear-gradient(45deg, #9013FE 15%, #50E3C2 90%)",
-    width: "100vw",
-    minHeight: "100vh",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  textbox: {
-    width: "60vw",
+
+const useStyles = makeStyles((theme) => ({ 
+    root: {
+        width: '100vw',
+        minHeight: '100vh',
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: 'center'
+        
+      },
+    textbox:{
+        
+        width: '60vw',
+
   },
   button: {
     width: "max-content",
@@ -31,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     pageHeader: {
       color: "orange",
+
     },
   },
 }));

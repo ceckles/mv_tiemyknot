@@ -13,7 +13,6 @@ import PersistentDrawerLeft from './AppBar';
 //Styles
 const useStyles = makeStyles(theme => ({
   root: {
-    bgcolor: "linear-gradient(45deg, #9013FE 15%, #50E3C2 90%)",
     minWidth: "100%",
     minHeight: "100vh",
     display: "flex",
