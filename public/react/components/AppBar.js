@@ -16,6 +16,7 @@ import { Link } from "react-router-dom";
 
 const drawerWidth = 100;
 
+
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: prop => prop !== "open"
 })(({ theme, open }) => ({

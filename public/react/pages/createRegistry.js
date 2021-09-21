@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
  
  }));
 
-const CreateReg = () =>{
+const CreateRegistry = () =>{
         //use styles
         const classes = useStyles();
         
@@ -45,17 +45,8 @@ const CreateReg = () =>{
                       <p>Create Registry</p>             
                           <TextField className={classes.textbox} required id="outlined-required" label="Groom" variant="outlined" /><br/>
                               <TextField className={classes.textbox} required id="outlined-required"label="Bride" variant="outlined" /><br/>
-                    <p>Item List</p>
-                        <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-                            <ListItem>
-        <                       ListItemText primary="Item 1" secondary="SilverWare" />
-                                  </ListItem>
-                             <ListItem>     
-                               <ListItemText primary="Item 2" secondary="Candles" />
-                            </ListItem>    
-                        </List>
-                        <Button variant="contained" color="primary" size="medium" className={classes.button}
-                             > +    </Button>
+                    
+                        
                         
 
 
@@ -73,4 +64,4 @@ const CreateReg = () =>{
             </div>);
 };
 
-export default CreateReg;
+export default CreateRegistry;
