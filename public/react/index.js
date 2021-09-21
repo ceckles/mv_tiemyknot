@@ -13,5 +13,5 @@ ReactDOM.render(
     <App />
   </HashRouter>
   </ThemeProvider>,
-  document.getElementById("root") //to this
+  document.getElementById("root")
 );

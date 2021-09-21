@@ -23,7 +23,7 @@ const AppBar = styled(MuiAppBar, {
   transition: theme.transitions.create(["margin", "width"], {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
-    background: orange
+    //background: orange
   }),
   ...(open && {
     width: `calc(100% - ${drawerWidth}px)`,
@@ -104,7 +104,7 @@ export default function PersistentDrawerLeft() {
             <Link to="/" style={{textDecoration: 'none'}} >Home</Link>,
             <Link to="/createRegistry"style={{textDecoration: 'none'}} >Create Registry </Link>,
             <Link to="/addItem"style={{textDecoration: 'none'}} >Add Item</Link>,
-            <Link to="/registry"style={{textDecoration: 'none'}} >Registry </Link>
+            <Link to="/registryList"style={{textDecoration: 'none'}} >Registry List</Link>
           ].map((text, index) => (
             <ListItem button key={text}>
               <ListItemText primary={text} key={index} />
