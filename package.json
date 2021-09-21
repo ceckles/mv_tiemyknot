@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start-dev": "parcel public/index.html --open",
-    "start": "node server/server.js"
+    "start-FrontEnd": "parcel public/index.html --open",
+    "start-Backend": "node server/server.js"
   },
   "author": "",
   "license": "ISC",
