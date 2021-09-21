@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from "@material-ui/core/styles";
 import FormControl from '@material-ui/core/FormControl';
-import { InputLabel, Input } from '@material-ui/core';
+import { InputLabel, Input, OutlinedInput } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import SaveIcon from '@material-ui/icons/Save';
 import TextField from '@material-ui/core/TextField';
@@ -52,9 +52,22 @@ const AddItem = () =>{
                 
                 <FormControl className={classes.root} noValidate autoComplete="off">                   
                    <PageHeader variant="h3" >Add Item</PageHeader>
-                    <TextField className={classes.textbox} required id="outlined-required" label="Item Name" variant="outlined" /><br/>
-                    <TextField className={classes.textbox} required id="outlined-required"label="Item Link" variant="outlined" /><br/>
-                
+
+                    <FormControl className={classes.textbox} variant="outlined" required>
+                        <InputLabel htmlFor="item-name">Item Name</InputLabel>
+                        <OutlinedInput label="Item Name"  />
+                    </FormControl>
+                    <br/>
+                    <FormControl className={classes.textbox} variant="outlined" required>
+                        <InputLabel htmlFor="item-link">Item Link</InputLabel>
+                        <OutlinedInput label="Item Link"  />
+                    </FormControl>
+                    <br/>
+                    <FormControl className={classes.textbox} variant="outlined" required>
+                        <InputLabel htmlFor="item-link">Quantity</InputLabel>
+                        <OutlinedInput label="Quantity"  />
+                    </FormControl>
+                    <br/>
                
     
                 <Button variant="contained" color="primary" size="large" className={classes.button}

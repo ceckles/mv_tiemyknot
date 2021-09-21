@@ -1,4 +1,4 @@
-.item-img {
+/* .item-img {
   width: 225px;
   padding: 0 10px;
   float: left;
@@ -14,9 +14,9 @@ h1 {
   font-family:  fantasy, sans-serif;
   text-shadow: 2px 2px fuchsia;
 }
+ */
 
 
-
-* {
-  background-color:  papayawhip;
+body {
+  background:  linear-gradient(45deg, #9013FE 15%, #50E3C2 90%);
 }
