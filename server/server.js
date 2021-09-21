@@ -71,7 +71,7 @@ app.post("/registry/addItem/", addItemCheck, async(req, res) => {
 });
 
 
-app.post("/createRegistry/added")  //registry 
+  //registry 
 
 
 
