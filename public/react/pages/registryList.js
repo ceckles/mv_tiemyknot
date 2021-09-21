@@ -12,7 +12,7 @@ const RegistryList = (props) => {
 		<br/><br/><br/><br/>
 		{
 			
-			props.RegistryList.map((registry, idx) => {
+			props.registryData.map((registry, idx) => {
 				console.log(registry);
 				return(<div key={idx}><strong>{registry.groomName}, {registry.brideName}</strong></div>)
 			})

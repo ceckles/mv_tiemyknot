@@ -5,6 +5,7 @@ import Registry from "../pages/registry";
 import CreateRegistry from "../pages/createRegistry";
 import Landing from "../pages/landing";
 import RegistryList from "../pages/registryList";
+
 import { Route } from 'react-router-dom'
 import PersistentDrawerLeft from './AppBar';
 
@@ -27,7 +28,7 @@ export const App = () => {
 
 
 	//useState
-	const [registryList, setRegistryList] = useState([]);
+	const [registryData, setRegistryData] = useState([]);
 
 
 
@@ -46,7 +47,7 @@ export const App = () => {
   			const response = await fetch('http://localhost:3000/registry');
   			const responseJSON = await response.json()
   			console.log("WHAT IS OUR RES? ", responseJSON);	
-  			setRegistryList(responseJSON.registry)
+  			setRegistryData(responseJSON.registry)
   		} catch(err) {
   			console.log("OH NO AN ERROR! ", err)
   		}
@@ -68,8 +69,8 @@ export const App = () => {
         <Route path="/addItem">
               <AddItem />
         </Route>
-        <Route path="/registry">
-              <RegistryList  RegistryList={registryList}/>
+        <Route path="/registryList">
+              <RegistryList  registryData={registryData}/>
         </Route>
 		<Route exact path="/">
 		<Landing />
