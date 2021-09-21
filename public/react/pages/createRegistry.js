@@ -42,8 +42,11 @@ const CreateRegistry = () =>{
         return(
             <div><p>Create Registry</p>  
                 <FormControl className={classes.root} noValidate autoComplete="off">      
-                      <p>Create Registry</p>             
+                      <h2>Create Registry</h2>             
                           <TextField className={classes.textbox} required id="outlined-required" label="Groom" variant="outlined" /><br/>
+
+                          <br />
+
                               <TextField className={classes.textbox} required id="outlined-required"label="Bride" variant="outlined" /><br/>
                     
                         
@@ -53,8 +56,7 @@ const CreateRegistry = () =>{
                       <br />
                       <br />
                       <br />
-                      <br />
-                      <br />
+                      
                   
                     <Button variant="contained" color="primary" size="large" className={classes.button}
                              > Submit    </Button>

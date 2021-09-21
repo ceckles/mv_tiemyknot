@@ -9,6 +9,7 @@ const seed = require('../seed')
 
 //Validators
 const idCheck = [check("id").isNumeric().withMessage("ID must be a number")];
+const nameCheck = [check("name").isString().withMessage("Must enter letters only")];
 
 
 const PORT = process.env.PORT || 3000;
@@ -65,7 +66,13 @@ app.post("/registry/addItem/", addItemCheck, async(req, res) => {
         console.log("Failed Add Item");
         res.status(400).send("Failed to Create");
     }
+
+
 });
+
+
+app.post("/createRegistry/added")  //registry 
+
 
 
 
