@@ -5,6 +5,7 @@ import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import { Link } from 'react-router-dom';
+import ringLogo from './img/ring.png';
 
 //Styles
 const useStyles = makeStyles((theme) => ({
@@ -23,6 +24,7 @@ const Landing = () => {
   return (
     <div className={classes.root}>
       <Grid container direction="column" justifyContent="center" alignItems="center">
+      <img src={ringLogo} alt="Ring"/>
         <Grid item ><Box m={2}><Typography variant="h1" color='primary'>Tie My Knot</Typography></Box></Grid>
         <Grid item><Box m={2}><Link to="/registryList"><Button variant="contained" color="primary">View A Registry</Button></Link></Box></Grid>
         <Grid item ><Box m={2}><Link to="/createRegistry"><Button variant="contained" color="primary" >Create A Registry</Button></Link></Box></Grid>

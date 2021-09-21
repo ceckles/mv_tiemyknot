@@ -12,10 +12,9 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
-import { orange } from "@mui/material/colors";
 import { Link } from "react-router-dom";
 
-const drawerWidth = 175;
+const drawerWidth = 100;
 
 const AppBar = styled(MuiAppBar, {
   shouldForwardProp: prop => prop !== "open"
@@ -41,7 +40,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   padding: theme.spacing(0, 1),
   // necessary for content to be below app bar
   ...theme.mixins.toolbar,
-  justifyContent: "flex-end"
+  justifyContent: "center"
 }));
 
 export default function PersistentDrawerLeft() {
@@ -59,11 +58,10 @@ export default function PersistentDrawerLeft() {
   return (
     <Box sx={{ display: "flex" }}>
       {/* <CssBaseline /> */}
-      <AppBar position="fixed" open={open}>
+      <AppBar position="fixed" open={open} style={{backgroundColor: "#301d0f"}}>
         <Toolbar>
           <IconButton
-            style={{ color: "orange" }}
-            color="inherit"
+            style={{ color: "#f5ebe1" }}        
             aria-label="open drawer"
             onClick={handleDrawerOpen}
             edge="start"
@@ -71,8 +69,8 @@ export default function PersistentDrawerLeft() {
           >
             <MenuIcon />
           </IconButton>
-          <Link to="/" style={{ textDecoration: "none" }}>
-            <Typography variant="h6" noWrap component="div" color="orange">
+          <Link to="/" style={{ textDecoration: "none"}}>
+            <Typography variant="h6" noWrap component="div"  color ="#f5ebe1 ">
               Tie My Knot
             </Typography>
           </Link>
@@ -86,7 +84,7 @@ export default function PersistentDrawerLeft() {
           "& .MuiDrawer-paper": {
             width: drawerWidth,
             boxSizing: "border-box",
-            backgroundColor: "orange"
+            backgroundColor: "#301d0f"
           }
         }}
         variant="persistent"
@@ -94,25 +92,27 @@ export default function PersistentDrawerLeft() {
         open={open}
       >
         <DrawerHeader>
-          <IconButton onClick={handleDrawerClose} style={{ color: "purple" }}>
+          <IconButton onClick={handleDrawerClose} style={{ color: "#f5ebe1 " }}>
             {theme.direction === "ltr" ? <MenuIcon /> : <MenuIcon />}
           </IconButton>
         </DrawerHeader>
         <Divider />
         <List>
           {[
-            <Link to="/" style={{textDecoration: 'none'}} >Home</Link>,
-            <Link to="/createRegistry"style={{textDecoration: 'none'}} >Create Registry </Link>,
-            <Link to="/addItem"style={{textDecoration: 'none'}} >Add Item</Link>,
-            <Link to="/registry"style={{textDecoration: 'none'}} >Registry</Link>,
-            <Link to="/registryList"style={{textDecoration: 'none'}} >Registry List</Link>
+            <Link to="/" style={{textDecoration: 'none', color :"#f5ebe1 "}} >Home</Link>,
+            <Link to="/createRegistry"style={{textDecoration: 'none', color :"#f5ebe1 "}} >Create Registry </Link>,
+            <Link to="/addItem"style={{textDecoration: 'none', color :"#f5ebe1 "}} >Add Item</Link>,
+            <Link to="/registry"style={{textDecoration: 'none', color :"#f5ebe1 "}} >Registry</Link>,
+            <Link to="/registryList"style={{textDecoration: 'none', color :"#f5ebe1 "}} >Registry List</Link>
           ].map((text, index) => (
             <ListItem button key={text}>
-              <ListItemText primary={text} key={index} />
+              <ListItemText primary={text} key={index} />              
             </ListItem>
           ))}
+          
         </List>
       </Drawer>
     </Box>
   );
 }
+  
