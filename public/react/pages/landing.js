@@ -9,7 +9,6 @@ import { Link } from 'react-router-dom';
 //Styles
 const useStyles = makeStyles((theme) => ({
   root: {
-    background: 'linear-gradient(45deg, #9013FE 15%, #50E3C2 90%)',
     minWidth: '100%',
     minHeight: '100vh',
     display: "flex",
@@ -25,7 +24,7 @@ const Landing = () => {
     <div className={classes.root}>
       <Grid container direction="column" justifyContent="center" alignItems="center">
         <Grid item ><Box m={2}><Typography variant="h1" color='primary'>Tie My Knot</Typography></Box></Grid>
-        <Grid item><Box m={2}><Link to="/registry"><Button variant="contained" color="primary">View A Registry</Button></Link></Box></Grid>
+        <Grid item><Box m={2}><Link to="/registryList"><Button variant="contained" color="primary">View A Registry</Button></Link></Box></Grid>
         <Grid item ><Box m={2}><Button variant="contained" color="primary" >Create A Registry</Button></Box></Grid>
       </Grid>
     </div>

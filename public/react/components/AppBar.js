@@ -1,5 +1,5 @@
 import * as React from "react";
-import { styled, useTheme} from "@mui/material/styles";
+import { styled, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 
@@ -13,10 +13,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import { orange } from "@mui/material/colors";
-import {  Link} from 'react-router-dom';
-
-
-
+import { Link } from "react-router-dom";
 
 const drawerWidth = 175;
 
@@ -26,7 +23,7 @@ const AppBar = styled(MuiAppBar, {
   transition: theme.transitions.create(["margin", "width"], {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
-    background: orange
+    //background: orange
   }),
   ...(open && {
     width: `calc(100% - ${drawerWidth}px)`,
@@ -35,8 +32,7 @@ const AppBar = styled(MuiAppBar, {
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen
     })
-  }),
-  
+  })
 }));
 
 const DrawerHeader = styled("div")(({ theme }) => ({
@@ -61,12 +57,13 @@ export default function PersistentDrawerLeft() {
   };
 
   return (
-    <Box sx={{ display: "flex" }} >
+    <Box sx={{ display: "flex" }}>
       {/* <CssBaseline /> */}
-      <AppBar position="fixed" open={open} >
-        <Toolbar  >
-          <IconButton style= {{color: 'orange'}}
-            color= 'inherit'
+      <AppBar position="fixed" open={open}>
+        <Toolbar>
+          <IconButton
+            style={{ color: "orange" }}
+            color="inherit"
             aria-label="open drawer"
             onClick={handleDrawerOpen}
             edge="start"
@@ -74,14 +71,14 @@ export default function PersistentDrawerLeft() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div" color='orange' >
-          <Link to="/index">
-            Tie My Knot
-            </Link>
-          </Typography>
+          <Link to="/" style={{ textDecoration: "none" }}>
+            <Typography variant="h6" noWrap component="div" color="orange">
+              Tie My Knot
+            </Typography>
+          </Link>
         </Toolbar>
       </AppBar>
-      <Drawer 
+      <Drawer
         sx={{
           width: drawerWidth,
 
@@ -89,33 +86,31 @@ export default function PersistentDrawerLeft() {
           "& .MuiDrawer-paper": {
             width: drawerWidth,
             boxSizing: "border-box",
-            backgroundColor:'orange'
+            backgroundColor: "orange"
           }
         }}
-        
         variant="persistent"
         anchor="left"
         open={open}
       >
         <DrawerHeader>
-          <IconButton onClick={handleDrawerClose} style= {{color: 'purple'}}>
-            
-            {theme.direction === "ltr" ? (
-              <MenuIcon />
-            ) : (
-              <MenuIcon />
-            )}
+          <IconButton onClick={handleDrawerClose} style={{ color: "purple" }}>
+            {theme.direction === "ltr" ? <MenuIcon /> : <MenuIcon />}
           </IconButton>
         </DrawerHeader>
         <Divider />
-        <List >
-          {[<Link to="/">Home</Link>, <Link to="/createRegistry">Create Registry </Link>, <Link to="/addItem">Add Item</Link>, <Link to="/registry">Registry </Link>].map(
-            (text, index) => (
-              <ListItem button key={text}>
-                <ListItemText primary={text} key={index}/>
-              </ListItem>
-            )
-          )}
+        <List>
+          {[
+            <Link to="/" style={{textDecoration: 'none'}} >Home</Link>,
+            <Link to="/createRegistry"style={{textDecoration: 'none'}} >Create Registry </Link>,
+            <Link to="/addItem"style={{textDecoration: 'none'}} >Add Item</Link>,
+            <Link to="/registry"style={{textDecoration: 'none'}} >Registry</Link>,
+            <Link to="/registryList"style={{textDecoration: 'none'}} >Registry List</Link>
+          ].map((text, index) => (
+            <ListItem button key={text}>
+              <ListItemText primary={text} key={index} />
+            </ListItem>
+          ))}
         </List>
       </Drawer>
     </Box>

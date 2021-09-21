@@ -7,7 +7,8 @@ Item.init({
     name: DataTypes.STRING,
     image: DataTypes.STRING,
     link: DataTypes.STRING,
-    quantity: DataTypes.STRING
+    quantity: DataTypes.INTEGER,
+    status: DataTypes.BOOLEAN
 }, {
     sequelize,
     timestamps: false,

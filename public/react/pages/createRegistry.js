@@ -11,7 +11,6 @@ import ListItemText from '@mui/material/ListItemText';
 //Styles
 const useStyles = makeStyles((theme) => ({ 
     root: {
-        background: 'linear-gradient(45deg, #9013FE 15%, #50E3C2 90%)',
         width: '100vw',
         minHeight: '100vh',
         display: "flex",

@@ -7,13 +7,15 @@
                 "name": "Pots & Pan",
                 "image":"https://m.media-amazon.com/images/I/71tI0CTd-SL._AC_SX466_.jpg",
                 "link":"https://www.amazon.com/Michelangelo-Cookware-Non-Stick-Induction-Nonstick/dp/B07BSPDVMK",
-                "quantity":"1"
+                "quantity":1,
+                "status": true
             },
             {
                 "name": "Cutting Board",
                 "image":"https://m.media-amazon.com/images/I/91iLajROOwL._AC_SL1500_.jpg",
                 "link":"https://www.amazon.com/Large-Reversible-Multipurpose-Acacia-Cutting/dp/B075QZHDTF",
-                "quantity":"1"
+                "quantity":1,
+                "status": false
             }
         ]
     },
@@ -25,13 +27,15 @@
                 "name": "Pots & Pan",
                 "image":"https://m.media-amazon.com/images/I/71tI0CTd-SL._AC_SX466_.jpg",
                 "link":"https://www.amazon.com/Michelangelo-Cookware-Non-Stick-Induction-Nonstick/dp/B07BSPDVMK",
-                "quantity":"1"
+                "quantity":1,
+                "status": false
             },
             {
                 "name": "Cutting Board",
                 "image":"https://m.media-amazon.com/images/I/91iLajROOwL._AC_SL1500_.jpg",
                 "link":"https://www.amazon.com/Large-Reversible-Multipurpose-Acacia-Cutting/dp/B075QZHDTF",
-                "quantity":"1"
+                "quantity":1,
+                "status": false
             }
         ]
     }

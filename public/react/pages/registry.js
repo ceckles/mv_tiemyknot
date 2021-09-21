@@ -23,10 +23,10 @@ function generate(element) {
     );
   }
   
-const Registry = () =>{
+const Registry = (props) =>{
         //use styles
         const classes = useStyles();
-
+        console.log(props.registryList);
         return(
             <div><Container maxWidth="sm">
         <h1  style={{ bgcolor: '#cfe8fc'}}>
