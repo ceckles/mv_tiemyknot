@@ -11,9 +11,19 @@ import ListSubheader from '@material-ui/core/ListSubheader';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 import Container from '@material-ui/core/Container';
-
+import AddItem from '../pages/addItem'
 //Styles
-const useStyles = makeStyles((theme) => ({ }));
+const useStyles = makeStyles((theme) => ({
+  root: {
+    background: '#f5ebe1',
+    minWidth: '100%',
+    minHeight: '100vh',
+    display: "flex",
+    flexDirection: "column",
+    //justifyContent: "center",
+  },
+
+}));
 
 function generate(element) {
     return [0, 1, 2].map((value) =>
@@ -27,11 +37,13 @@ const Registry = (props) =>{
         //use styles
         const classes = useStyles();
         console.log(props.registryList);
+        
         return(
             <div><Container maxWidth="sm">
-        <h1  style={{ bgcolor: '#cfe8fc'}}>
-        <p>Registry</p>
-        
+        <br></br>
+        <br></br>
+        <br></br>
+        <h3 style={{fontFamily: "Arial"}}>Registry</h3>
          <List subheader={<ListSubheader>Items</ListSubheader>} className={classes.root}>
            <List dense="">
              {generate(
@@ -59,7 +71,6 @@ const Registry = (props) =>{
            </List>
 
          </List>
-         </h1>
       </Container>
       </div>
     

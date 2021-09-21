@@ -49,7 +49,7 @@ const addItemCheck = [
 ];
 app.post("/registry/addItem/", addItemCheck, async(req, res) => {
     //Check for errors in data
-    console.log(JSON.stringify(req.body));
+    //console.log(JSON.stringify(req.body));
     const error = validationResult(req.body);
     if(!error.isEmpty()){
         return res.status(400).json({errors: error.array()});

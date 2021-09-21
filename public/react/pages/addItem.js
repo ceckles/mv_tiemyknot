@@ -4,8 +4,6 @@ import FormControl from "@material-ui/core/FormControl";
 import { InputLabel, Input, OutlinedInput } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import SaveIcon from "@material-ui/icons/Save";
-import TextField from "@material-ui/core/TextField";
-import { orange } from "@material-ui/core/colors";
 import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
 
@@ -41,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
 
 const PageHeader = withStyles({
   root: {
-    color: orange[500],
+    color: "#301d0f",
   },
 })(Typography);
 
@@ -51,7 +49,7 @@ const AddItem = (props) => {
 
   return (
     <div>
-    <form action="http://localhost:3000/registry/addItem/" method="post" onSubmit={e => e.preventDefault()}>
+    <form action="http://localhost:3000/registry/addItem/" method="post">
         <FormControl className={classes.root} noValidate autoComplete="off">
           <PageHeader variant="h3">Add Item</PageHeader>
 
@@ -104,3 +102,4 @@ const AddItem = (props) => {
 };
 
 export default AddItem;
+  

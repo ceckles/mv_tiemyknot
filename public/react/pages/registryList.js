@@ -1,14 +1,22 @@
 import React, { useState } from 'react';
 import { makeStyles, theme } from "@material-ui/core/styles";
 
-const useStyles = makeStyles((theme) => ({}));
+const useStyles = makeStyles((theme) => ({
+	root: {
+		minWidth: '100%',
+		minHeight: '100vh',
+		display: "flex",
+		flexDirection: "column",
+		justifyContent: "center",
+	  },
+}));
 
 const RegistryList = (props) => {
 	  //use styles
 	  const classes = useStyles();
-
+ 
 	return(
-		<div>
+		<div className={classes.root} align="center">
 		<br/><br/><br/><br/>
 		{
 			
