@@ -16,6 +16,13 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     justifyContent: "center",
   },
+  logo: {
+    maxWidth: "25%",
+    height: "auto",
+    '&:hover': {
+      transform: "scaleX(-1)"
+   },
+  },
 }));
 
 const Landing = () => {
@@ -24,10 +31,10 @@ const Landing = () => {
   return (
     <div className={classes.root}>
       <Grid container direction="column" justifyContent="center" alignItems="center">
-      <img src={ringLogo} alt="Ring"/>
+      <img src={ringLogo} alt="Ring" className={classes.logo}/>
         <Grid item ><Box m={2}><Typography variant="h1" color='primary'>Tie My Knot</Typography></Box></Grid>
-        <Grid item><Box m={2}><Link to="/registryList"><Button variant="contained" color="primary">View A Registry</Button></Link></Box></Grid>
-        <Grid item ><Box m={2}><Link to="/createRegistry"><Button variant="contained" color="primary" >Create A Registry</Button></Link></Box></Grid>
+        <Grid item><Box m={2}><Link to="/registryList" style={{textDecoration:'none'}}><Button variant="contained" color="primary">View A Registry</Button></Link></Box></Grid>
+        <Grid item ><Box m={2}><Link to="/createRegistry" style={{textDecoration: 'none'}}><Button variant="contained" color="primary">Create A Registry</Button></Link></Box></Grid>
       </Grid>
     </div>
   );
