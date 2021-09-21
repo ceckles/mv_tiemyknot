@@ -47,7 +47,7 @@ const AddItem = (props) => {
 
   return (
     <div>
-    <form action="http://localhost:3000/registry/addItem/" method="post" onSubmit={e => e.preventDefault()}>
+    <form action="http://localhost:3000/registry/addItem/" method="post">
         <FormControl className={classes.root} noValidate autoComplete="off">
           <PageHeader variant="h3">Add Item</PageHeader>
 

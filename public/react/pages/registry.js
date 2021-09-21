@@ -11,7 +11,7 @@ import ListSubheader from '@material-ui/core/ListSubheader';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Switch from '@material-ui/core/Switch';
 import Container from '@material-ui/core/Container';
-
+import AddItem from '../pages/addItem'
 //Styles
 const useStyles = makeStyles((theme) => ({ }));
 

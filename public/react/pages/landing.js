@@ -26,7 +26,7 @@ const Landing = () => {
       <Grid container direction="column" justifyContent="center" alignItems="center">
         <Grid item ><Box m={2}><Typography variant="h1" color='primary'>Tie My Knot</Typography></Box></Grid>
         <Grid item><Box m={2}><Link to="/registryList"><Button variant="contained" color="primary">View A Registry</Button></Link></Box></Grid>
-        <Grid item ><Box m={2}><Button variant="contained" color="primary" >Create A Registry</Button></Box></Grid>
+        <Grid item ><Box m={2}><Link to="/createRegistry"><Button variant="contained" color="primary" >Create A Registry</Button></Link></Box></Grid>
       </Grid>
     </div>
   );
