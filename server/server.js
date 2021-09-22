@@ -38,8 +38,10 @@ app.get('/registry/:id',idCheck, async (req, res) => {
     if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
     }
-    const registry = await Registry.findByPk(req.params.id)
-    res.json({registry})
+    const {id}= req.params;
+        const singleReg = await Registry.findByPk(req.params.id,
+             {include:{model: Item }});
+    res.json({singleReg})
 });
 
 
