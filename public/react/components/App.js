@@ -68,10 +68,11 @@ export const App = () => {
         <Route path="/addItem">
               <AddItem />
         </Route>
-        <Route path="/registry">
+        <Route exact path="/registry/:id" >
               <Registry />
         </Route>
-        <Route path="/registryList">
+        
+        <Route exact path="/registry">
               <RegistryList  registryData={registryData}/>
         </Route>
 		<Route exact path="/">

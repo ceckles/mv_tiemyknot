@@ -1,15 +1,8 @@
-const {Sequelize, DataTypes, Model} = require('sequelize')
-const {sequelize} = require('../db')
+const {Registry} =require('./Registry')
+const {Item} = require('./Item')
 
 
-class Sauce extends Model {}
+    Registry.hasMany(Item);
+    Item.belongsTo(Registry);
 
-Sauce.init({
-    name: DataTypes.STRING,
-    image: DataTypes.STRING,
-}, {
-    sequelize,
-    timestamps: false,
-});
-
-module.exports = Sauce;
+module.exports = {Registry, Item};
