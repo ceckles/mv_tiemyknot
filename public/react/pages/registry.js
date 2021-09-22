@@ -17,10 +17,10 @@ const useStyles = makeStyles((theme) => ({
   root: {
     background: '#f5ebe1',
     minWidth: '100%',
-    minHeight: '100vh',
+    minHeight: 'maxContent',
     display: "flex",
     flexDirection: "column",
-    //justifyContent: "center",
+    justifyContent: "center",
   },
 
 }));
@@ -39,7 +39,7 @@ const Registry = (props) =>{
         console.log(props.registryList);
         
         return(
-            <div><Container maxWidth="sm">
+            <div style={{height: "100vh"}}><Container maxWidth="sm">
         <br></br>
         <br></br>
         <br></br>
