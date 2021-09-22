@@ -20,20 +20,17 @@ const useStyles = makeStyles((theme) => ({
         
       },
     textbox:{
-        
+        backgroundColor: "#f5ebe1",
         width: '60vw',
+        color:"#301d0f",
+        borderRadius: "3px"
 
   },
   button: {
     width: "max-content",
     display: "flex",
     flexDirection: "column",
-
-    justifyContent: "center",
-    pageHeader: {
-      color: "orange",
-
-    },
+    justifyContent: "center"
   },
 }));
 
@@ -49,9 +46,9 @@ const AddItem = (props) => {
 
   return (
     <div>
-    <form action="http://localhost:3000/registry/addItem/" method="post" onSubmit={e => e.preventDefault()}>
+    <form action="http://localhost:3000/registry/addItem/" method="post">
         <FormControl className={classes.root} noValidate autoComplete="off">
-          <PageHeader variant="h3">Add Item</PageHeader>
+        <h3 style={{fontFamily: "Arial"}}>Add Item</h3>
 
           <FormControl className={classes.textbox} variant="outlined" required>
             <InputLabel htmlFor="name">Item Name</InputLabel>
@@ -102,4 +99,3 @@ const AddItem = (props) => {
 };
 
 export default AddItem;
-  

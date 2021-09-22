@@ -9,6 +9,7 @@ const seed = require('../seed')
 
 //Validators
 const idCheck = [check("id").isNumeric().withMessage("ID must be a number")];
+const nameCheck = [check("name").isString().withMessage("Must enter letters only")];
 
 
 const PORT = process.env.PORT || 3000;
@@ -43,21 +44,22 @@ app.get('/registry/:id',idCheck, async (req, res) => {
     res.json({singleReg})
 });
 
+
+//Item Post Route
 const addItemCheck = [
     check("quantity").isNumeric().withMessage("Quantity must be a number"),
     check("name").not().isEmpty().trim().escape().withMessage("Name must not be empty"),
     check("link").not().isEmpty().trim().escape().withMessage("Link must not be empty")
 ];
+
 app.post("/registry/addItem/", addItemCheck, async(req, res) => {
     //Check for errors in data
-    console.log(JSON.stringify(req.body));
     const error = validationResult(req.body);
     if(!error.isEmpty()){
         return res.status(400).json({errors: error.array()});
         console.log("Invalide Add Item");
     }
 
-    console.log("Valid Add Item");
     //Create New Item for Registry
     const newItem = await Item.create(req.body);
     if(newItem) {
@@ -65,10 +67,36 @@ app.post("/registry/addItem/", addItemCheck, async(req, res) => {
         res.status(200).send("Item Added");
     }else{
         console.log("Failed Add Item");
-        res.status(400).send("Failed to Create");
+        res.status(400).send("Failed to Create Item");
     }
+
+
 });
 
+
+//Reg Post Route
+const regCheck = [
+  check("groomName").not().isEmpty().trim().escape().withMessage("Groom Name must not be empty"),
+  check("brideName").not().isEmpty().trim().escape().withMessage("Bride Name must not be empty"),
+];
+app.post("/registry/create", regCheck, async (req, res) => {
+  //Check for errors in data
+  const error = validationResult(req.body);
+  if (!error.isEmpty()) {
+    return res.status(400).json({ errors: error.array() });
+    console.log("Error Add Reg");
+  }
+
+  //Create New Item for Registry
+  const newReg = await Registry.create(req.body);
+  if(newReg) {
+      console.log("Reg Added")
+      res.status(200).send("Registry Added");
+  }else{
+      console.log("Failed Add Reg");
+      res.status(400).send("Failed to Create Reg");
+  }
+});
 
 
 

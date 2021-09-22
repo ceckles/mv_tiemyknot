@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { makeStyles, theme } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
 import List from "@mui/material/List";
@@ -15,12 +15,15 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+
 const RegistryList = props => {
   const [regID, setRegID] = useState(0);
+
   //use styles
   const classes = useStyles();
   return (
     <div className={classes.root} align="center">
+
       <Box>
         <List
           sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
@@ -43,6 +46,7 @@ const RegistryList = props => {
           })}
         </List>
       </Box>
+
     </div>
   );
 };
