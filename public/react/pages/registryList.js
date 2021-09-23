@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 
-const RegistryList = props => {
+export const RegistryList = (props) => {
   const [regID, setRegID] = useState(0);
 
   //use styles
@@ -50,4 +50,5 @@ const RegistryList = props => {
     </div>
   );
 };
-export default RegistryList;
+
+// export default RegistryList;
