@@ -4,7 +4,7 @@ import AddItem from "../pages/addItem";
 import Registry from "../pages/registry";
 import CreateRegistry from "../pages/createRegistry";
 import Landing from "../pages/landing";
-import RegistryList from "../pages/registryList";
+import { RegistryList } from "../pages/registryList";
 
 import { Route } from 'react-router-dom'
 import PersistentDrawerLeft from './AppBar';

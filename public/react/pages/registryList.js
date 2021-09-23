@@ -51,4 +51,4 @@ export const RegistryList = (props) => {
   );
 };
 
-// export default RegistryList;
+// export default RegistryList;git 
