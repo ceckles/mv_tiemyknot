@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState, useEffect} from 'react';
 import { makeStyles } from "@material-ui/core/styles";
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -25,49 +25,98 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-function generate(element) {
-    return [0, 1, 2].map((value) =>
+function generate(element,items) {
+    return [...items].map((value) =>
       React.cloneElement(element, {
         key: value,
       }),
     );
   }
   
-const Registry = (props) =>{
+export const Registry = () =>{
         //use styles
         const classes = useStyles();
-        console.log(props.registryList);
+  
+        const [singleReg, setSingleReg] = useState([]);
         
+
+        async function fetchReg() {
+          try {
+                    
+            const url = window.location.href.split('/');
+            console.log("fetch url is: ",url[5])
+            const fetchThis= "http://localhost:3000/registry/"+ url[5];
+            console.log("URL", fetchThis)
+            const response = await fetch(fetchThis);
+            const responseJSON = await response.json()
+            console.log("WHAT IS OUR individual RES? ", responseJSON);	
+      
+            setSingleReg(responseJSON.singleReg);
+       
+            
+          } catch(err) {
+            
+            console.log("OH NO AN ERROR! ", err)
+          }
+        } 
+
+          //useEffect
+  useEffect(() => {
+    fetchReg();
+  }, []);
+
+  
+ console.log("bride", singleReg.brideName);
+ console.log("groom", singleReg.groomName);
+ 
+const bride = singleReg.brideName;
+const groom = singleReg.groomName;  
+const items = singleReg.Items;
+console.log("items", items)
+//  props.singleReg.items.map((item, idx)=>{
+//         const name = "name";
+//         const image = "image";
+//         const itemlin = "link";
+//         const quantity =" quantity"
+//           )}   
         return(
             <div style={{height: "100vh"}}><Container maxWidth="sm">
         <br></br>
         <br></br>
         <br></br>
-        <h3 style={{fontFamily: "Arial"}}>Registry</h3>
+        <h3 style={{fontFamily: "Arial"}}>Registry for<br/> {bride} & {groom} </h3>
+          
+
+
+
          <List subheader={<ListSubheader>Items</ListSubheader>} className={classes.root}>
            <List dense="">
-             {generate(
-               <ListItem>
-                 <ListItemAvatar>
-                   <Avatar>
-                     <RedeemIcon />
-                   </Avatar>
-                 </ListItemAvatar>
-                 <ListItemText
-                   primary="Item link here"
-                   secondary={"" ? 'Secondary text' : "Additional text here"}
-                 />
-                 <ListItemSecondaryAction>
-                 
-                 <FormControlLabel
-                   value="Reserved"
-                   control={<Switch color="primary" />}
-                   label="Reserved?"
-                   labelPlacement="Start"
-                   />
-                 </ListItemSecondaryAction>
-               </ListItem>,
-             )}
+             {
+               items ? items.map((item, idx )=>{
+                 return(
+                  <ListItem>
+                  <ListItemAvatar>
+                    <Avatar>
+                      <RedeemIcon />
+                    </Avatar>
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary={item.name}
+                    secondary={"" ? 'Secondary text' : "Additional text here"}
+                  />
+                  <ListItemSecondaryAction>
+                  
+                  <FormControlLabel
+                    value={items.status}
+                    control={<Switch color="primary" />}
+                    label="Reserved?"
+                    labelPlacement="Start"
+                    />
+                  </ListItemSecondaryAction>
+                </ListItem>
+                 )
+               }) : "No Items"
+             }
            </List>
 
          </List>
@@ -78,4 +127,4 @@ const Registry = (props) =>{
            
         )};
 
-export default Registry;
+//export default Registry;

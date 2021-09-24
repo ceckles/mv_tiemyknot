@@ -33,15 +33,15 @@ app.get('/registry', async (req, res) => {
     res.json({registry})
 });
 
-app.get('/registry/:id',idCheck, async (req, res) => {
+app.get('/registry/:id', async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
     }
-    const {id}= req.params;
+  
         const singleReg = await Registry.findByPk(req.params.id,
              {include:{model: Item }});
-    res.json({singleReg})
+    res.json({singleReg});
 });
 
 

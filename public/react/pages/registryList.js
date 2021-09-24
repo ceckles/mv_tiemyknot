@@ -23,7 +23,7 @@ export const RegistryList = (props) => {
   const classes = useStyles();
   return (
     <div className={classes.root} align="center">
-
+      <h3>List of Registries</h3>
       <Box>
         <List
           sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}

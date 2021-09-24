@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Landing = () => {
+export const Landing = () => {
   //use styles
   const classes = useStyles();
   return (
@@ -33,7 +33,7 @@ const Landing = () => {
       <Grid container direction="column" justifyContent="center" alignItems="center">
       <img src={ringLogo} alt="Ring" className={classes.logo}/>
         <Grid item ><Box m={2}><Typography variant="h1" color='primary'>Tie My Knot</Typography></Box></Grid>
-        <Grid item><Box m={2}><Link to="/registryList" style={{textDecoration:'none'}}><Button variant="contained" color="primary">View Registries</Button></Link></Box></Grid>
+        <Grid item><Box m={2}><Link to="/registry" style={{textDecoration:'none'}}><Button variant="contained" color="primary">View Registries</Button></Link></Box></Grid>
         <Grid item ><Box m={2}><Link to="/createRegistry" style={{textDecoration: 'none'}}><Button variant="contained" color="primary">Create A Registry</Button></Link></Box></Grid>
       </Grid>
     </div>
@@ -41,4 +41,4 @@ const Landing = () => {
 };
 
 //export
-export default Landing;
+//export default Landing;

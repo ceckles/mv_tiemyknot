@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import AddItem from "../pages/addItem";
-import Registry from "../pages/registry";
-import CreateRegistry from "../pages/createRegistry";
-import Landing from "../pages/landing";
+import {AddItem }from "../pages/addItem";
+import {Registry} from "../pages/registry";
+import {CreateRegistry} from "../pages/createRegistry";
+import {Landing} from "../pages/landing";
 import { RegistryList } from "../pages/registryList";
+
 
 import { Route } from 'react-router-dom'
 import PersistentDrawerLeft from './AppBar';
@@ -31,15 +32,14 @@ export const App = () => {
 
 
 
-  //useEffect
-  useEffect(() => {
-    fetchRegList();
-  }, []);
 
-  function handleShowReg() {
-    //Switch the show of Registry
-    setShowReg(!showReg);
-  }
+
+          
+
+  // function handleShowReg() {
+  //   //Switch the show of Registry
+  //   setShowReg(!showReg);
+  // }
 
 	async function fetchRegList() {
   		try {
@@ -68,7 +68,7 @@ export const App = () => {
         <Route path="/addItem">
               <AddItem />
         </Route>
-        <Route exact path="/registry/:id" >
+        <Route path={`/registry/:id`} >
               <Registry />
         </Route>
         

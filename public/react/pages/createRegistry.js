@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
  
  }));
 
-const CreateRegistry = () =>{
+export const CreateRegistry = () =>{
         //use styles
         const classes = useStyles();
         
@@ -69,4 +69,4 @@ const CreateRegistry = () =>{
             </div>);
 };
 
-export default CreateRegistry;
+//export default CreateRegistry;

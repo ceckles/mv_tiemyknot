@@ -40,7 +40,7 @@ const PageHeader = withStyles({
   },
 })(Typography);
 
-const AddItem = (props) => {
+export const AddItem = (props) => {
   //use styles
   const classes = useStyles();
 
@@ -98,4 +98,4 @@ const AddItem = (props) => {
   );
 };
 
-export default AddItem;
+//export default AddItem;

@@ -1,6 +1,9 @@
 {
   "registries": [
-    { "groomName": "John Doe", "brideName": "Jane Doe" },
+    { 
+      "groomName": "John Doe", 
+      "brideName": "Jane Doe" 
+    },
     {
       "groomName": "John Smith",
       "brideName": "Jane Smith"
@@ -8,7 +11,7 @@
   ],
   "items": [
     {
-      "name": "Pots & Pan",
+      "name": "Pots & Pans",
       "image": "https://m.media-amazon.com/images/I/71tI0CTd-SL._AC_SX466_.jpg",
       "link": "https://www.amazon.com/Michelangelo-Cookware-Non-Stick-Induction-Nonstick/dp/B07BSPDVMK",
       "quantity": 1,
@@ -24,7 +27,7 @@
       "RegistryId": 1
     },
     {
-      "name": "Pots & Pan",
+      "name": "Pots & Pans",
       "image": "https://m.media-amazon.com/images/I/71tI0CTd-SL._AC_SX466_.jpg",
       "link": "https://www.amazon.com/Michelangelo-Cookware-Non-Stick-Induction-Nonstick/dp/B07BSPDVMK",
       "quantity": 1,

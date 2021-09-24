@@ -100,7 +100,6 @@ export default function PersistentDrawerLeft() {
             <Link to="/" style={{textDecoration: 'none', color :"#f5ebe1 "}} >Home</Link>,
             <Link to="/createRegistry"style={{textDecoration: 'none', color :"#f5ebe1 "}} >Create Registry </Link>,
             <Link to="/addItem"style={{textDecoration: 'none', color :"#f5ebe1 "}} >Add Item</Link>,
-            <Link to="/registry/:id"style={{textDecoration: 'none', color :"#f5ebe1 "}} >Registry</Link>,
             <Link to="/registry"style={{textDecoration: 'none', color :"#f5ebe1 "}} >Registry List</Link>
           ].map((text, index) => (
             <ListItem button key={text}>
